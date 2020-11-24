@@ -1,0 +1,343 @@
+#check {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+body {
+  /*ocultando a rolagem de barra lateral*/
+  overflow-x: hidden;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 auto;
+    width: 1000px;
+    height: auto;
+}
+.sticky {
+    position: sticky;
+    top: 0;
+    min-width: 100%;
+    background-color: #FFF;
+    z-index: 1; /*resolve problema da imagem sobrepondo */
+}
+
+.telefone-coluna {
+    float: right;
+    min-height: 100px;
+    min-width: 30%;
+    margin-top: 50px;
+/*    background-color: red;*/
+}
+
+.nav-bar {
+    /*box-shadow: 0 4px 8px -2px rgba(0,0,0,.2);*/
+    box-shadow: 0 12px 10px -4px rgba(0,0,0,.2);
+    min-width: 100%;
+}
+
+
+.menu {   
+    padding-top: 15px;
+    padding-bottom: 15px;   
+    width: 40%;
+    margin-left: 30%;   
+}
+
+.image {
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:180px;
+}
+
+.image-size {
+    width: 180px;     
+    height: 99px; 
+}
+
+/*links do menu*/
+.link {
+    margin-left: 15px;
+    position: relative;
+    text-decoration: none !important;
+}
+
+/*efeitos*/
+.link:after{
+    content: '';
+    position:absolute;
+    width: 0; 
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #337ab7;
+    transition: width .2s ease;
+    -webkit-transition: width .2s ease;   
+}
+
+.link:hover:after {
+    width: 100%;
+    left: 0;
+    background: #337ab7;
+    /*margin-left: 15px;*/
+}
+
+.tel-content {
+    float: left;
+    margin-top: 63px;
+    width: 415px;
+    position: absolute;
+}
+
+.tel {
+    text-decoration: none !important;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+@media only screen and (max-width:1000px) {  
+    html, body {
+        overflow-x:hidden;
+    }
+    
+    /*teste*/
+    .overlay {
+        opacity: 0.5;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        top: 0;
+        left: 0px;
+        position: fixed;
+        background: #000;
+        display: none;
+        transition-delay: 0.3s;
+    }
+    
+    .image {
+        margin-top: -80px !important;
+    }
+    
+    .menu-btn {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            z-index: 2;
+            /*transition: all .5s ease-in-out;*/
+    }
+
+    /* forma a parte central -  do menu*/
+    .menu-btn_burger {
+            width: 30px;
+            height: 3px;
+            background: #000;
+            border-radius: 3px;
+            box-shadow: 0 2px 5px rgba(255,101,47,.2);
+            transition: all .5s ease-in-out; 
+    }
+
+
+
+    .menu-btn_burger::before,
+    .menu-btn_burger::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 3px;
+            background: #000;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(255,101,47,.2);
+            /*delay da animacao*/
+            transition: all .5s ease-in-out;
+    }
+
+
+    /* forma a parte de cima -  do menu*/
+    .menu-btn_burger::before {
+            transform: translateY(-10px);
+    }
+
+    /* forma a parte de baixo - do menu*/
+    .menu-btn_burger::after {
+            transform: translateY(10px);
+    }
+
+
+    /*animacao*/
+
+    .menu-btn.open .menu-btn_burger {
+            /*efeito da parte central do menu - mover a esquerda*/
+            transform: translateX(-50px);
+            /*efeito da parte central - desaparecer*/
+            background: transparent;
+            box-shadow: none;
+    }
+
+    /*faz o efeito do X*/
+    .menu-btn.open .menu-btn_burger::before {
+            transform: rotate(45deg) translate(35px, -35px); 
+    }
+
+    .menu-btn.open .menu-btn_burger::after {
+            transform: rotate(-45deg) translate(35px, 35px); 
+    }		
+    /*teste*/
+    
+/*    .overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0px;
+        z-index: 0;
+        display: none;
+        overflow: hidden;
+        -webkit-overflow-scrolling: touch;
+        outline: 0;
+        width: 600px;
+    }*/
+    
+    .nav-bar {
+        height: 90px;
+    }
+    
+    .mobile-menu {
+        display: block !important;
+    }
+    
+    .close {
+        z-index: 1px;
+        background-color: red;
+    }
+    
+    .hamburger {
+        float: left !important;
+        margin-left: 20px !important;
+        margin-top: 30px !important;
+        font-size: 25px !important;
+        display: block !important;
+        margin-left: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 1;
+        color: black;
+        position: absolute;
+        margin-top: 5px;
+        /*width: 30px;*/
+        width: 45px;
+        text-align: center;
+        background-color: #F3F3F3;
+        cursor: pointer;
+        z-index: 2;
+    }
+    
+    .bar {   
+        background-color: #23618E;
+        color: white;
+        margin-left: 0;
+        position: absolute;
+        transition: all .2s linear;
+        left: -380px;
+        top: -15px;
+        height: 590px;
+        width: 35vw;
+        margin-left: 0;
+        margin-top: 0px;
+        z-index: 1;
+        text-align: center;
+        overflow: hidden;
+        font-size: 16px;
+    }
+
+    
+    /*efeitos*/
+    .link:after{
+        content: '';
+        position:absolute;
+        width: 0; 
+        height: 2px;
+        display: block;
+        margin-top: 5px;
+        right: 0;
+        background: #FFF !important;
+        transition: width .2s ease;
+        -webkit-transition: width .2s ease;   
+    }
+    
+    .link {
+        color: #ccc !important;
+    }
+    
+    a:hover {
+        /*width: 100%;*/
+        /*left: 0;*/
+        color: #FFF !important;
+        /*margin-left: 15px;*/
+    }
+    
+    .link-button {
+        background-color: #23618E !important;
+        padding: 20px;
+        font-size: 16px !important;
+        transition: all .2s linear;
+        color: #f4f4f9;
+        width: 35vw;
+        /*background-color: #23618E !important;
+	    padding: 20px;
+	    font-size: 16px !important;
+	    transition: all .2s linear;
+        color: #f4f4f9;
+        width: 70vw;
+        margin-left: 20vw;*/
+    }
+
+    .link {
+        margin-left: 0 !important;
+    }
+    
+    .contact {
+        margin-left: 15px;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+    
+    a {
+        text-decoration: none !important;
+        color: #FFF;
+    }
+    
+    .menu {
+        display: none;
+    }
+    
+    .image-size {
+        height: 80px !important;
+        width: 120px !important;
+        margin-left: 30px !important;
+    }
+    
+    .telefone-coluna {
+        display: none;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .bar {
+        width: 70vw !important;
+    }
+    
+    .link-button {
+        width: 70vw !important;
+    }
+}
+

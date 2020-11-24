@@ -1,0 +1,324 @@
+body {
+    font-family: 'Lato';
+}
+
+.left-column {
+    float: left;
+    height: 100px;
+    min-width: 35%;
+    /*background-color: yellow;*/
+}
+
+.right-column {
+    /*background-color: red;*/
+    float: right;
+    height: 100px;
+    min-width: 35%;
+}
+
+.center-column {
+    float: left;
+    /*background-color: blue;*/
+    height: 100px;
+    min-width: 30%;
+}
+
+.banner {
+    position: relative;
+    background-image: url("../img/portoes.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    padding: 110px;
+    overflow: hidden;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.1);
+    opacity: 0.9 !important;
+}
+
+
+.texto-principal {
+    font-size: 48px;
+    font-weight: bold;
+    color: #FFF;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.arrow {
+    /*font-weight: bold;*/
+    cursor: pointer;
+    font-size: 25px;
+    color: #FFF;
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+}
+
+.banner-mobile {display: none;}
+.second-banner-mobile {display: none;}
+
+.second-banner {
+    height: auto;
+    color: #fff;
+    text-align: center;
+    /*115px*/
+    padding: 130px;
+    background-image: url("../img/portao-garagem.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    /*box-shadow: inset 0 0 0 200px rgba(0,0,0,.2);*/
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
+}
+
+.text-box {
+    color: #fff;
+    padding: 110px;
+    font-weight: bold;
+}
+
+.subtitulo {
+    font-size: 40px;
+    font-weight: bold;
+    color: #FFF;
+}
+
+.alinhar-texto {
+    font-size: 16px;
+    text-align: justify;
+}
+
+p {
+    font-size: 16px;
+    font-family: Lato;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+.btnVer {   
+    font-weight: bold;
+    color: #FFF;
+    background-color: #006C99;
+    height: 50px;
+    width: 150px;
+    border-radius: 50px;
+    border:none;
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+
+.texto{
+    text-align: justify;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Lato;
+    color: #FFF;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.espacamento {
+    margin-top: 100px;
+}
+
+.servicos {
+    font-family: Lato;
+    font-size: 36px;
+    color: #313131;
+}
+
+.info-titulo {
+    font-family: Lato;
+    font-size: 20px;
+}
+
+.info {
+    font-family: Lato;
+    font-size: 16px;
+}
+
+/*coluna desktop*/
+
+.desktop-column {display: block !important;}
+
+.mobile-column {display: none !important;}
+
+.image-container {
+    padding: 10px;
+}
+
+.imagem {
+    margin-top: 30px;
+    width: 300px;
+    height: 230px;
+    padding: 15px;
+}
+
+.image-description {
+    padding: 0px;
+    margin-top: 0px;
+    width: 303px;
+    text-align: center;
+}
+/*Fim coluna desktop*/
+
+
+.espacamento-grande {
+    margin-top: 40%;
+}
+
+.espacamento-pequeno {
+    margin-top: 30px;
+}
+
+.tamanho-img {
+    width: 230px;
+    height: 200px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.alinhar {
+    margin-left: 5px;
+    width: 230px;
+    height: 240px;
+    border-radius: 5px;
+}
+
+.opacity:hover {
+    opacity: 0.7;
+}
+
+.cor{background-color: #039BC0;}
+
+.anuncio {
+    font-size: 20px;
+    font-family: Lato;
+    color: #FFF;
+    background-color: #039BC0;
+    height: 90px;
+    transform: translate(0%, 70%);
+}
+
+/*botão mobile subir*/
+.visibility {display: none !important;}
+
+
+@media only screen and (max-width:1000px) {
+
+    /*primeira coluna do banner*/
+    .banner-desktop {display: none !important;}
+    .banner-mobile {display: block !important;}
+    
+    .texto-principal {
+        font-size: 30px;
+    }
+   
+    .arrow {
+        top: 60%;
+    }
+
+    /*segunda coluna do banner*/
+    .second-banner-desktop {display: none !important;}
+    .second-banner-mobile {display: block !important;}
+
+    .second-banner {
+        padding: 55px;
+    }
+
+    .subtitulo {
+        font-size: 28px; 
+    }
+
+    .alinhar-texto {
+        text-align: left;
+        font-size: 16px;
+    }
+
+    .text-box {
+        padding: 30px;
+    }
+
+    .btnVer {
+        height: 40px;
+        width: 120px;
+    }
+
+
+    .servicos {
+        font-size: 25px;
+    }
+
+    /*coluna mobile*/ 
+    .desktop-column {display: none !important;}
+   
+    .mobile-column {
+        display: block !important;
+    }
+
+    .imagem {
+        padding: 0;
+        width: 45vw;
+        height: 35vw;
+    }
+
+
+    /*cotnainer flex*/
+    .flex-container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        margin: 0 0;
+        padding: 0;
+    }
+
+    /*ultima coluna mobile*/
+    .alinhar {
+        width: 40vw;
+        height: 35vw;
+    }
+
+    /*botao mobile subir*/
+    .visibility {display: block !important;}
+
+    .float-btn {
+        position: fixed;
+        width: 20px;
+        height: 20px;
+        bottom: 60px;
+        right: 40px;
+        color: #fff;
+        text-align: center;
+        box-shadow: 1px 1px 1px #999;
+        z-index: 2;
+        border-radius: 30px;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .texto-principal {
+        font-size: 28px;
+    }
+
+    .subtitulo {
+        font-size: 25px;
+    }
+
+    .second-banner {
+        padding: 30px !important;
+    }
+}

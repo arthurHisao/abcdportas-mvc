@@ -1,0 +1,62 @@
+# Disable directory browsing 
+#Options -Indexes
+#RewriteCond %{HTTP_REFERER} !^%{HTTP_HOST}$ [NC]
+#order deny,allow
+#deny from allow
+
+
+# deny all POST requests
+<IfModule mod_rewrite.c>
+#	RewriteCond %{REQUEST_METHOD} POST
+#	RewriteRule .* - [F,L]
+</IfModule>
+
+
+
+#<Files *.php>
+#    Order Deny,Allow
+#    Deny from all  
+##    Allow from 127.0.0.1
+#    Allow from localhost
+#</Files>
+
+
+#<Files index.php>
+#    Order Allow,Deny
+#    Allow from all
+#</Files>
+#
+#<Files inicio.php>
+#    Order Allow,Deny
+#    Allow from all
+#</Files>
+#
+#<Files Senha.php>
+#    Order Allow,Deny
+#    Allow from all
+#</Files>
+#
+#<Files sair.php>
+#    Order Allow,Deny
+#    Allow from all
+#</Files>
+
+
+
+RewriteEngine On
+#RewriteRule ^inicio index.php [NC,L]
+#RewriteRule ^inicio inicio.php [NC,L]
+#RewriteRule ^resetar formulario_resetar.php [NC,L]
+#RewriteRule ^sair sair.php [NC,L]
+#RewriteRule ^excluir excluir.php [NC,L]
+
+
+#as instrucoes abaixo permitem que ignorem a url padrao index
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+
+#recebe os nomes da url e atribui o nome recebido para a variavel url
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+
+Options -Indexes

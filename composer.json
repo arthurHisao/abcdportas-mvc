@@ -1,0 +1,22 @@
+{
+    "name": "arthur",
+    "description": "AbcdPortas",
+    "authors": [
+        {
+        "name": "arthur",
+        "email": "arthur.onaya@gmail.com"
+        }
+    ],
+    
+    "autoload": {
+        "psr-4": {
+            "Core\\": "core",
+            "Sts\\": "app/sts"
+        }
+    },
+    
+    "require":{
+        "phpmailer/phpmailer": "^6.1"
+    }    
+    
+}
