@@ -13,40 +13,9 @@
         }
 
         public function Render(){      
-            switch($this->Route) {
-                case Home:
-                    include 'app/sts/Views/include/header.php';
-                    include 'app/sts/Views/include/menu.php';
-                    include $this->Route;
-                    include 'app/sts/Views/include/footer.php'; 
-                break;
-
-                case Servicos:
-                    include 'app/sts/Views/include/header.php';
-                    include 'app/sts/Views/include/menu.php';
-                    include $this->Route;
-                    include 'app/sts/Views/include/footer.php'; 
-                break;
-          
-                case Sobre:
-                    include 'app/sts/Views/include/header.php';
-                    include 'app/sts/Views/include/menu.php';
-                    include $this->Route;
-                    include 'app/sts/Views/include/footer.php'; 
-                break;
-                
-                case Contato:
-                    include 'app/sts/Views/include/header.php';
-                    include 'app/sts/Views/include/menu.php';
-                    include $this->Route;
-                    include 'app/sts/Views/include/footer.php'; 
-                break;
-                
-                case NotFound:
-                    include 'app/sts/Views/include/header.php';
-                    include 'app/sts/Views/include/menu.php';
-                    include  $this->Route;
-                    include 'app/sts/Views/include/footer.php'; 
-            }
+            include 'app/sts/Views/include/header.php';
+            include 'app/sts/Views/include/menu.php';
+            include $this->Route;
+            include 'app/sts/Views/include/footer.php'; 
         }
     }

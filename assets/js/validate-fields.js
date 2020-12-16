@@ -31,9 +31,6 @@ alertText = $('.alert-text');
         //transformando o objeto em json
         var dadosJson = JSON.stringify(dados);
 
-        //chamando a funcao
-        Validate();
-
         if(Validate() === false) {
             return false;
         }
@@ -50,14 +47,21 @@ alertText = $('.alert-text');
             //contentType: 'application/json; charset=utf-8',
             data: {"dados":dadosJson},
 
-            success:function(response) {      
-                //resultado do ajax  
-                $('.conteudo').html(response);
+            success:function(data) {      
+                // interpretando os dados json
+                let res = JSON.parse(data);
+                
+                if(res.status === "success") {                  
+                    //resultado do servidor  
+                    $('.conteudo').html(res.response);
+                    formulario.find('input, textarea').val("");
+                } else {
+                    $('.conteudo').html(res.response);
+                }
                 
                 //fechando o modal
                 setTimeout(function () {
                     $('.modal').modal('hide');
-                    formulario.find('input, textarea').val("");
                 }, 3000);
 
             }, 
@@ -96,7 +100,7 @@ function Validate() {
         alertMessage('Endereço de e-mail inválido', 'alert-danger'); 
         email.focus();
         return false;
-    } else if(!telefoneVal.match(/^[0-9-() ]{13,}$/g)) {
+    } else if(!telefoneVal.match(/^[0-9() ]{13,}$/g)) {
         alertMessage('Insira um número de telefone válido, exemplo (19) 3008-8988', 'alert-danger'); 
         telefone.focus();
         return false;

@@ -24,6 +24,7 @@
         <script src="<?php echo URL?>assets/js/galleries.js"></script>
         <script src="<?php echo URL?>assets/js/ancoragem-delay.js"></script>
         <script src="<?php echo URL?>assets/js/parallax.js"></script>
+        <script src="<?php echo URL?>assets/js/jquery.mask.min.js"></script>
     </head>
 <body>
  

@@ -53,7 +53,7 @@
                 
             <div class="nav-bar">
                 <div class="image">
-                    <img class="image-size" src="<?php echo URL?>assets/img/logo.png">
+                    <img class="image-size" alt="Portões de aço ABCD Portas" src="<?php echo URL?>assets/img/logo.png">
                 </div>
                     
                 <nav class="menu text-center">

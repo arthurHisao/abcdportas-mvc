@@ -73,7 +73,7 @@ class ConfigController {
             $classLoad->index();
         } else {
             $this->urlController = controllerNotFound; 
-            $class = "\\Sts\\Controllers\\".controllerNotFound;
+            $class = "\\Sts\\Controllers\\".$this->urlController;
             $classLoad = new $class;
             $classLoad->index();
         }

@@ -19,6 +19,8 @@ class Formulario {
     private $email;
     private $telefone;
     private $menssagem;
+    private $status;
+    private $response;
 
     public function __construct($dados) {
 
@@ -74,11 +76,15 @@ class Formulario {
             $mail->Subject = $subject;
             $mail->Body =  $body;
             
-            //verificando se foi enviado o e-mail
+            //retornando resultado para o ajax
             if ($mail->send()) {
-                exit("<b>Email enviado com sucesso!</b>");
+                $this->status = "success";
+                $this->response = "<b>Email enviado com sucesso!</b>";
+                exit(json_encode(array("status" => $this->status, "response" => $this->response)));
             } else {//se tiver erro na funcao send()
-                exit("<b>Erro ao enviar o E-mail verifique se o e-mail foi digitado corretamente</b>");
+                $this->status = "failed";
+                $this->response = "<b>Erro ao enviar o E-mail verifique se o e-mail foi digitado corretamente</b>";
+                exit(json_encode(array("status" => $this->status, "response" => $this->response)));
             }
         } 
     } 

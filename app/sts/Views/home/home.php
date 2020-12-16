@@ -71,9 +71,9 @@
         <div class="desktop-column">
             <div class="d-flex justify-content-center bd-highlight mb-3">
                 <div class="image-container">
-                    <img class="imagem" src="<?php echo URL?>assets/img/portao-escritorio.jpg">                       
-                    <img class="imagem" src="<?php echo URL?>assets/img/portao-manual.jpg">
-                    <img class="imagem" src="<?php echo URL?>assets/img/portao-roxo.jpg">
+                    <img class="imagem" alt="Portão de um escritório" src="<?php echo URL?>assets/img/portao-escritorio.jpg">                       
+                    <img class="imagem" alt="Portão rolante" src="<?php echo URL?>assets/img/portao-manual.jpg">
+                    <img class="imagem" alt="Portão para residências" src="<?php echo URL?>assets/img/portao-roxo.jpg">
                 </div>
             </div>          
             
@@ -102,7 +102,7 @@
             <div class="col">
                 <div class="d-flex justify-content-center bd-highlight">
                     <div class="text-center image-container">
-                        <img class="imagem" src="<?php echo URL?>assets/img/portao-escritorio.jpg">   
+                        <img class="imagem" alt="Portão de um escritório" src="<?php echo URL?>assets/img/portao-escritorio.jpg">   
                         <div class="space-text"></div>
                         <p>Portões Basculantes, Deslizantes e Pivotantes.</p>
                     </div>
@@ -111,7 +111,7 @@
                 
                 <div class="d-flex justify-content-center bd-highlight">
                     <div class="text-center image-container">
-                        <img class="imagem" src="<?php echo URL?>assets/img/portao-manual.jpg">
+                        <img class="imagem" alt="Portão rolante" src="<?php echo URL?>assets/img/portao-manual.jpg">
                         <div class="space-text"></div>
                         <p>Portões Basculantes, Deslizantes e Pivotantes.</p>
                     </div>
@@ -119,7 +119,7 @@
                     
                 <div class="d-flex justify-content-center bd-highlight">
                     <div class="text-center image-container">
-                        <img class="imagem" src="<?php echo URL?>assets/img/portao-roxo.jpg">
+                        <img class="imagem" alt="Portão para residências"  src="<?php echo URL?>assets/img/portao-roxo.jpg">
                         <div class="space-text"></div>
                         <p>Portões Basculantes, Deslizantes e Pivotantes.</p>
                     </div>
@@ -141,10 +141,10 @@
         <div class="desktop-column">
             <div class="espacamento-pequeno">
                 <div class="d-flex justify-content-center bd-highlight">
-                    <a class="image-link" href="<?php echo URL?>assets/img/portao-rolante.jpg"><img class="opacity alinhar" src="<?php echo URL?>assets/img/portao-rolante.jpg"></a>
-                    <a class="image-link" href="<?php echo URL?>assets/img/portao-empresarial.jpg"><img class="opacity alinhar" src="<?php echo URL?>assets/img/portao-empresarial.jpg"></a>
-                    <a class="image-link" href="<?php echo URL?>assets/img/portao-industrial.jpg"><img class="opacity alinhar" src="<?php echo URL?>assets/img/portao-industrial.jpg"></a>
-                    <a class="image-link" href="<?php echo URL?>assets/img/portao-comercio.jpg"><img class="opacity alinhar" src="<?php echo URL?>assets/img/portao-comercio.jpg"></a>
+                    <a class="image-link" href="<?php echo URL?>assets/img/portao-rolante.jpg"><img class="opacity alinhar" alt="Portão rolante de frente" src="<?php echo URL?>assets/img/portao-rolante.jpg"></a>
+                    <a class="image-link" href="<?php echo URL?>assets/img/portao-empresarial.jpg"><img class="opacity alinhar" alt="Portões rolantes" src="<?php echo URL?>assets/img/portao-empresarial.jpg"></a>
+                    <a class="image-link" href="<?php echo URL?>assets/img/portao-industrial.jpg"><img class="opacity alinhar" alt="Portão rolante industrial" src="<?php echo URL?>assets/img/portao-industrial.jpg"></a>
+                    <a class="image-link" href="<?php echo URL?>assets/img/portao-comercio.jpg"><img class="opacity alinhar" alt="Portão rolante para comércio" src="<?php echo URL?>assets/img/portao-comercio.jpg"></a>
                 </div>
             </div>
         </div>
@@ -155,19 +155,19 @@
             <div class="espacamento-pequeno"></div>
                 <div class="flex-container">
                     <div class="image-container">
-                        <a class="image-link" href="<?php echo URL?>assets/img/portao-rolante.jpg"><img class="opacity alinhar" src="<?php echo URL?>assets/img/portao-rolante.jpg"></a>                       
+                        <a class="image-link" href="<?php echo URL?>assets/img/portao-rolante.jpg"><img class="opacity alinhar" alt="Portão rolante de frente" src="<?php echo URL?>assets/img/portao-rolante.jpg"></a>                       
                     </div>
                     <div class="image-container">
-                        <a class="image-link" href="<?php echo URL?>assets/img/portao-empresarial.jpg"><img class="opacity alinhar" src="<?php echo URL?>assets/img/portao-empresarial.jpg"></a>
+                        <a class="image-link" href="<?php echo URL?>assets/img/portao-empresarial.jpg"><img class="opacity alinhar" alt="Portões rolantes" src="<?php echo URL?>assets/img/portao-empresarial.jpg"></a>
                     </div>
                 </div>
                   
                 <div class="flex-container">
                     <div class="image-container">
-                        <a class="image-link" href="<?php echo URL?>assets/img/portao-industrial.jpg"><img class="opacity alinhar" src="<?php echo URL?>assets/img/portao-industrial.jpg"></a>
+                        <a class="image-link" href="<?php echo URL?>assets/img/portao-industrial.jpg"><img class="opacity alinhar" alt="Portão rolante industrial" src="<?php echo URL?>assets/img/portao-industrial.jpg"></a>
                     </div>
                     <div class="image-container">
-                        <a class="image-link" href="<?php echo URL?>assets/img/portao-comercio.jpg"><img class="opacity alinhar" src="<?php echo URL?>assets/img/portao-comercio.jpg"></a>
+                        <a class="image-link" href="<?php echo URL?>assets/img/portao-comercio.jpg"><img class="opacity alinhar" alt="Portão rolante para comércio" src="<?php echo URL?>assets/img/portao-comercio.jpg"></a>
                     </div>
                 </div>
             </div>

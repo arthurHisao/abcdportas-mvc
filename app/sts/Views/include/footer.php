@@ -63,5 +63,5 @@
         </footer>
     </div>
 
-    <script src="<?php echo URL?>assets/js/validar_campos.js"></script>
+    <script src="<?php echo URL?>assets/js/validate-fields.js"></script>
 </html> 
