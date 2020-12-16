@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <meta name="description" content="Informações - A ABCD Portas de Aço surgiu a mais de 25 anos com a finalidade de fabricar produtos de qualidade para a segurança e a comodidade de seus cliente.">
