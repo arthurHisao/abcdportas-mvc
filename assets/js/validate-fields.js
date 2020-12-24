@@ -1,10 +1,11 @@
 var form = $('form[name="formulario"]'),
-nome = $('#nome'),
-email = $('#email'),
-telefone = $('#telefone'),
-menssagem = $('#menssagem'),
-enviar = $('#enviar'),
-alertText = $('.alert-text');
+    nome = $('#nome'),
+    email = $('#email'),
+    telefone = $('#telefone'),
+    menssagem = $('#menssagem'),
+    enviar = $('#enviar'),
+    imgCaminho = $('#caminho').attr('src'),
+    alertText = $('.alert-text');
 
 (function() {
     //plugin mask para validar campo telefone
@@ -35,17 +36,19 @@ alertText = $('.alert-text');
             return false;
         }
         
-        //exibindo modal
-        $('.modal').modal({backdrop: 'static', keyboard: false});
-        $('.modal').modal('show');
-        $('.modal-backdrop.in').remove();
-        
         $.ajax({
             type: "POST",
             url: 'index.php',
             //dataType: 'json',
             //contentType: 'application/json; charset=utf-8',
             data: {"dados":dadosJson},
+
+            beforeSend: function() {
+                //exibindo modal
+                $('.modal').modal({backdrop: 'static', keyboard: false});
+                $('.modal').modal('show');
+                $('.modal-backdrop.in').remove();
+            },
 
             success:function(data) {      
                 // interpretando os dados json
@@ -55,19 +58,32 @@ alertText = $('.alert-text');
                     //resultado do servidor  
                     $('.conteudo').html(res.response);
                     formulario.find('input, textarea').val("");
+                    closeModal();
                 } else {
                     $('.conteudo').html(res.response);
+                    closeModal();
                 }
-                
-                //fechando o modal
-                setTimeout(function () {
-                    $('.modal').modal('hide');
-                }, 3000);
-
             }, 
+
+            error:function() {
+                $('.conteudo').html("<b>Erro verifique a conexão com a internet</b>");
+                closeModal();
+            },
         });
     });
 })();
+
+function closeModal() {
+    setTimeout(function () {
+        $('.modal').modal('hide');
+        
+        // restaurando o modal padrao
+        $('.conteudo').html(`
+            <h2>Enviando E-mail</h2>
+            <img src="${imgCaminho}">
+        `);
+    }, 4000);
+}
 
 function Validate() {
     let nomeVal = $('#nome').val();

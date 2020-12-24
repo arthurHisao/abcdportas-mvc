@@ -2,7 +2,6 @@
 
 namespace Sts\Models\ajax;
 
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -11,7 +10,6 @@ if(!defined('URL')) {
     header("Location: /");
     exit();
 }
-
 
 class Formulario {
 
@@ -23,7 +21,6 @@ class Formulario {
     private $response;
 
     public function __construct($dados) {
-
         $objDados = json_decode($dados);
         $toArray = (array) $objDados;
 
@@ -35,18 +32,13 @@ class Formulario {
         $this->email = $email;
         $this->telefone = $telefone;
         $this->menssagem = $menssagem;           
-    
     }
     
     public function enviarEmail() {
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            
-            // nome de quem está enviando no e-mail
-            //$name = "Cliente Formulário";    
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {            
             // título do e-mail
             $subject = "Cliente Formulário - ABCDPORTAS";
-            // conteúdo do e-mail - irá gerar uma senha aleatoria no e-mail
             $body = 'Chegou um e-mail do cliente para você do site: '.URL.'<br>'.
             'Nome: '.$this->nome.'<br>'.
             'Email: '.$this->email.'<br>'.
