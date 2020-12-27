@@ -9,28 +9,10 @@ class ConfigController {
     private $urlController;
     private $urlParametro;
     private static $Format;
-    private $urlValido;
 
     public function __construct() {
         $this->cleanUrl();
         $this->checkURL();
-    }
-
-
-    private function checkURL() {
-        //rota padrao 
-        $this->urlController = controllerHome;
-        $this->urlConjunto = explode("/", $this->url);
-
-        //definindo as urls validas
-        $this->urlValido = array('home', 'servicos', 'sobre', 'contato');   
-
-        if(!empty(filter_input(INPUT_GET, 'url', FILTER_DEFAULT))) {
-            if(!empty($this->url) && isset($this->urlConjunto[0])) {
-                $this->urlController = $this->slugController($this->urlConjunto[0]);                   
-            }           
-        }
-        
     }
 
     //Tratamento de Url
@@ -45,20 +27,28 @@ class ConfigController {
         //Elimina a ultima barra
         $this->url = rtrim($this->url, "/");
 
-        //declarando array
         self::$Format = array();
 
         //Caracteres que nao desejo
-        //self::$Format['a'] = 'ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜüÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûýýþÿRr"!@#$%&*()_-+={[}]?;:.,\\\'<>°ºª ';
         self::$Format['a'] = 'ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜüÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûýýþÿRr"!@#$%&*()_-+={[}]?;:.,\\\'<>°ºª ';
         
         //Caracteres que desejo substituir
-        //self::$Format['b'] = 'aaaaaaaceeeeiiiidnoooooouuuuuybsaaaaaaaceeeeiiiidnoooooouuuyybyRr--------------------------------';
         self::$Format['b'] = 'aaaaaaaceeeeiiiidnoooooouuuuuybsaaaaaaaceeeeiiiidnoooooouuuyybyRr-------------------------------';
-
 
         //substituindo caracteres indesejado por caractere que desejo substituir
         $this->url = strtr(utf8_decode($this->url), utf8_decode(self::$Format['a']), self::$Format['b']);
+    }
+
+    private function checkURL() {
+        //rota padrao 
+        $this->urlController = controllerHome;
+        $this->urlConjunto = explode("/", $this->url);
+
+        if(!empty(filter_input(INPUT_GET, 'url', FILTER_DEFAULT))) {
+            if(!empty($this->url) && isset($this->urlConjunto[0])) {
+                $this->urlController = $this->slugController($this->urlConjunto[0]);                   
+            }           
+        }
     }
 
     //metodo que faz tratamentos de uma url exemplo: alterando para maiusculo "home"/Blog

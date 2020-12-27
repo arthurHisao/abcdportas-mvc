@@ -1,6 +1,5 @@
 <?php
-    ini_set('display_errors', 1);
-    
+    //ini_set('display_errors', 1);
     require './core/Config.php';
     require './vendor/autoload.php';
     
@@ -16,4 +15,3 @@
         $Url = new loadController();
         $Url->loadController();    
     }
-  

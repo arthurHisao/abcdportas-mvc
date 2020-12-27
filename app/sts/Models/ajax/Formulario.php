@@ -23,19 +23,34 @@ class Formulario {
     public function __construct($dados) {
         $objDados = json_decode($dados);
         $toArray = (array) $objDados;
-
-        $toArray = array_map('strip_tags', $toArray);
-
-        extract($toArray);
-
-        $this->nome = $nome;
-        $this->email = $email;
-        $this->telefone = $telefone;
-        $this->menssagem = $menssagem;           
+        $this->validateStr($toArray);
     }
-    
-    public function enviarEmail() {
 
+    private function validateStr($toArray) {
+        //verificando se o array possui elemento vazio
+        foreach($toArray as $value) {
+            if($value === "") {
+                $this->status = "failed";
+                $this->response = "<b>Erro, preencha todos os campos!</b>";
+                $this->showMessage($this->status, $this->response);
+            }  
+        }
+        //extraindo cada elemento do array
+        extract($toArray);
+        
+        $this->nome = preg_replace('/[^a-zA-Z]/', '', $nome);
+        $this->email = preg_replace('/[^a-zA-Z0-9@._-]/', '', $email);
+        $this->telefone = preg_replace('/[^0-9]/', '', $telefone);
+        $this->menssagem = strip_tags($menssagem);            
+        $this->enviarEmail();
+    }
+
+    //exibe a menssagem no modal
+    private function showMessage($status, $response) {
+        exit(json_encode(array("status" => $this->status, "response" => $this->response)));
+    }
+
+    private function enviarEmail() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {            
             // título do e-mail
             $subject = "Cliente Formulário - ABCDPORTAS";
@@ -72,11 +87,11 @@ class Formulario {
             if ($mail->send()) {
                 $this->status = "success";
                 $this->response = "<b>Email enviado com sucesso!</b>";
-                exit(json_encode(array("status" => $this->status, "response" => $this->response)));
-            } else {//se tiver erro na funcao send()
+                $this->showMessage($this->status, $this->response);
+            } else {
                 $this->status = "failed";
                 $this->response = "<b>Erro ao enviar o E-mail verifique se o e-mail foi digitado corretamente</b>";
-                exit(json_encode(array("status" => $this->status, "response" => $this->response)));
+                $this->showMessage($this->status, $this->response);
             }
         } 
     } 

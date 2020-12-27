@@ -16,15 +16,6 @@
         <link rel="stylesheet" href="<?php echo URL?>assets/css/estilo_sobre.css">
         <link rel="stylesheet" href="<?php echo URL?>assets/css/magnific-popup.css">
         <link rel="stylesheet" href="<?php echo URL?>assets/css/estilo_contato.css">
-        <script src="<?php echo URL?>assets/js/jquery.min.js"></script>
-        <script src="<?php echo URL?>assets/css/bootstrap/bootstrap.min.js"></script>
-        <script src="<?php echo URL?>assets/js/key-words.js"></script>
-        <script src="<?php echo URL?>assets/js/mobile-menu.js"></script>
-        <script src="<?php echo URL?>assets/js/magnific-popup.js"></script>
-        <script src="<?php echo URL?>assets/js/galleries.js"></script>
-        <script src="<?php echo URL?>assets/js/ancoragem-delay.js"></script>
-        <script src="<?php echo URL?>assets/js/parallax.js"></script>
-        <script src="<?php echo URL?>assets/js/jquery.mask.min.js"></script>
     </head>
 <body>
  

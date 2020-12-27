@@ -39,8 +39,6 @@ var form = $('form[name="formulario"]'),
         $.ajax({
             type: "POST",
             url: 'index.php',
-            //dataType: 'json',
-            //contentType: 'application/json; charset=utf-8',
             data: {"dados":dadosJson},
 
             beforeSend: function() {
@@ -53,7 +51,7 @@ var form = $('form[name="formulario"]'),
             success:function(data) {      
                 // interpretando os dados json
                 let res = JSON.parse(data);
-                
+
                 if(res.status === "success") {                  
                     //resultado do servidor  
                     $('.conteudo').html(res.response);
@@ -117,7 +115,7 @@ function Validate() {
         email.focus();
         return false;
     } else if(!telefoneVal.match(/^[0-9() ]{13,}$/g)) {
-        alertMessage('Insira um número de telefone válido, exemplo (19) 3008-8988', 'alert-danger'); 
+        alertMessage('Insira um número de telefone válido, exemplo (19) 30088988', 'alert-danger'); 
         telefone.focus();
         return false;
     } else if(menssagemVal == "" || menssagemVal.length <= 30) {
