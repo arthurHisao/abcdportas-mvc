@@ -1,5 +1,5 @@
 {
-    "name": "arthur",
+    "name": "site/abcdportas",
     "description": "AbcdPortas",
     "authors": [
         {
@@ -16,7 +16,8 @@
     },
     
     "require":{
-        "phpmailer/phpmailer": "^6.1"
+        "phpmailer/phpmailer": "^6.1",
+        "rain/raintpl": ">=3.0.0"
     }    
     
 }

@@ -62,9 +62,3 @@
         </div>
     </div>
     <!--fim mobile quarto banner-->
-    
-        <div class="cor">
-            <div class="anuncio text-center">    
-                <a class="link-contato" href="contato"><strong>Solicite um orçamento sem compromisso</strong></a>
-            </div>
-        </div>    

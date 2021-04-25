@@ -18,6 +18,5 @@
 
     //definindo a rota controller
     define('controllerHome', 'Home');
-    define('controllerUser', 'User');
     define('controllerNotFound','NotFoundController');
     define('controllerForm','FormController');

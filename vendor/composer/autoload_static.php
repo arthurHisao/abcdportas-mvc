@@ -36,11 +36,27 @@ class ComposerStaticInitaa320e1e3c53a11e38c10dbe67cfdd17
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'R' => 
+        array (
+            'Rain' => 
+            array (
+                0 => __DIR__ . '/..' . '/rain/raintpl/library',
+            ),
+        ),
+    );
+
+    public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitaa320e1e3c53a11e38c10dbe67cfdd17::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitaa320e1e3c53a11e38c10dbe67cfdd17::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitaa320e1e3c53a11e38c10dbe67cfdd17::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitaa320e1e3c53a11e38c10dbe67cfdd17::$classMap;
 
         }, null, ClassLoader::class);
     }

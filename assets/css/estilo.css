@@ -1,3 +1,348 @@
+#check {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+body {
+  /*ocultando a rolagem de barra lateral*/
+  overflow-x: hidden;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 auto;
+    width: 1000px;
+    height: auto;
+}
+.sticky {
+    position: initial;
+    top: 0;
+    min-width: 100%;
+    background-color: #FFF;
+    z-index: 1; /*resolve problema da imagem sobrepondo */
+}
+
+.telefone-coluna {
+    float: right;
+    min-height: 100px;
+    min-width: 30%;
+    margin-top: 50px;
+/*    background-color: red;*/
+}
+
+.nav-bar {
+    /*box-shadow: 0 4px 8px -2px rgba(0,0,0,.2);*/
+    box-shadow: 0 12px 10px -4px rgba(0,0,0,.2);
+    min-width: 100%;
+}
+
+
+.menu {   
+    padding-top: 15px;
+    padding-bottom: 15px;   
+    width: 40%;
+    margin-left: 30%;   
+}
+
+.image {
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:180px;
+}
+
+.image-size {
+    width: 180px;     
+    height: 99px; 
+}
+
+/*links do menu*/
+.link {
+    margin-left: 15px;
+    position: relative;
+    text-decoration: none !important;
+}
+
+/*efeitos*/
+.link:after{
+    content: '';
+    position:absolute;
+    width: 0; 
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #337ab7;
+    transition: width .2s ease;
+    -webkit-transition: width .2s ease;   
+}
+
+.link:hover:after {
+    width: 100%;
+    left: 0;
+    background: #337ab7;
+    /*margin-left: 15px;*/
+}
+
+.tel-content {
+    float: left;
+    margin-top: 63px;
+    width: 415px;
+    position: absolute;
+}
+
+.tel {
+    text-decoration: none !important;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+@media only screen and (max-width:1000px) {  
+    html, body {
+        overflow-x:hidden;
+    }
+    
+    /*teste*/
+    .overlay {
+        opacity: 0.5;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        top: 0;
+        left: 0px;
+        position: fixed;
+        background: #000;
+        display: none;
+        transition-delay: 0.3s;
+    }
+    
+    .image {
+        margin-top: -80px !important;
+    }
+    
+    .menu-btn {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            z-index: 2;
+            /*transition: all .5s ease-in-out;*/
+    }
+
+    /* forma a parte central -  do menu*/
+    .menu-btn_burger {
+            width: 30px;
+            height: 3px;
+            background: #000;
+            border-radius: 3px;
+            box-shadow: 0 2px 5px rgba(255,101,47,.2);
+            transition: all .5s ease-in-out; 
+    }
+
+
+
+    .menu-btn_burger::before,
+    .menu-btn_burger::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 3px;
+            background: #000;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(255,101,47,.2);
+            /*delay da animacao*/
+            transition: all .5s ease-in-out;
+    }
+
+
+    /* forma a parte de cima -  do menu*/
+    .menu-btn_burger::before {
+            transform: translateY(-10px);
+    }
+
+    /* forma a parte de baixo - do menu*/
+    .menu-btn_burger::after {
+            transform: translateY(10px);
+    }
+
+
+    /*animacao*/
+
+    .menu-btn.open .menu-btn_burger {
+            /*efeito da parte central do menu - mover a esquerda*/
+            transform: translateX(-50px);
+            /*efeito da parte central - desaparecer*/
+            background: transparent;
+            box-shadow: none;
+    }
+
+    /*faz o efeito do X*/
+    .menu-btn.open .menu-btn_burger::before {
+            transform: rotate(45deg) translate(35px, -35px); 
+    }
+
+    .menu-btn.open .menu-btn_burger::after {
+            transform: rotate(-45deg) translate(35px, 35px); 
+    }		
+    /*teste*/
+    
+/*    .overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0px;
+        z-index: 0;
+        display: none;
+        overflow: hidden;
+        -webkit-overflow-scrolling: touch;
+        outline: 0;
+        width: 600px;
+    }*/
+    
+    .nav-bar {
+        height: 90px;
+    }
+    
+    .mobile-menu {
+        display: block !important;
+    }
+    
+    .close {
+        z-index: 1px;
+        background-color: red;
+    }
+    
+    .hamburger {
+        float: left !important;
+        margin-left: 20px !important;
+        margin-top: 30px !important;
+        font-size: 25px !important;
+        display: block !important;
+        margin-left: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 1;
+        color: black;
+        position: absolute;
+        margin-top: 5px;
+        /*width: 30px;*/
+        width: 45px;
+        text-align: center;
+        background-color: #F3F3F3;
+        cursor: pointer;
+        z-index: 2;
+    }
+    
+    .bar {   
+        background-color: #23618E;
+        color: white;
+        margin-left: 0;
+        position: absolute;
+        transition: all .2s linear;
+        left: -380px;
+        top: 0;
+        height: 590px;
+        width: 35vw;
+        margin-left: 0;
+        margin-top: 0px;
+        z-index: 1;
+        text-align: center;
+        overflow: hidden;
+        font-size: 16px;
+        padding-top: 70px;
+    }
+
+    
+    /*efeitos*/
+    .link:after{
+        content: '';
+        position:absolute;
+        width: 0; 
+        height: 2px;
+        display: block;
+        margin-top: 5px;
+        right: 0;
+        background: #FFF !important;
+        transition: width .2s ease;
+        -webkit-transition: width .2s ease;   
+    }
+    
+    .link {
+        color: #ccc !important;
+    }
+    
+    a:hover {
+        /*width: 100%;*/
+        /*left: 0;*/
+        color: #FFF !important;
+        /*margin-left: 15px;*/
+    }
+    
+    .link-button {
+        background-color: #23618E !important;
+        padding: 20px;
+        font-size: 16px !important;
+        transition: all .2s linear;
+        color: #f4f4f9;
+        width: 35vw;
+        /*background-color: #23618E !important;
+	    padding: 20px;
+	    font-size: 16px !important;
+	    transition: all .2s linear;
+        color: #f4f4f9;
+        width: 70vw;
+        margin-left: 20vw;*/
+    }
+
+    .link {
+        margin-left: 0 !important;
+    }
+    
+    .contact {
+        margin-left: 15px;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+    
+    a {
+        text-decoration: none !important;
+        color: #FFF;
+    }
+    
+    .menu {
+        display: none;
+    }
+    
+    .image-size {
+        height: 80px !important;
+        width: 120px !important;
+        margin-left: 30px !important;
+    }
+    
+    .telefone-coluna {
+        display: none;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .bar {
+        width: 70vw !important;
+    }
+    
+    .link-button {
+        width: 70vw !important;
+    }
+}
+
+
 body {
     font-family: 'Lato';
 }
@@ -25,7 +370,7 @@ body {
 
 .banner {
     position: relative;
-    background-image: url("../img/portoes.jpg");
+    background-image: url("../img/portoes/portoes.jpg");
     background-repeat: no-repeat;
     background-position: top;
     background-attachment: fixed;
@@ -51,12 +396,12 @@ body {
 .arrow {
     /*font-weight: bold;*/
     cursor: pointer;
-    font-size: 25px;
+    font-size: 2rem;
     color: #FFF;
     position: absolute;
     top: 53%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -30%);
     text-decoration: none;
 }
 
@@ -68,8 +413,8 @@ body {
     color: #fff;
     text-align: center;
     /*115px*/
-    padding: 130px;
-    background-image: url("../img/portao-garagem.jpg");
+    padding: 30px;
+    background-image: url("../img/portoes/portao-garagem.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -80,7 +425,8 @@ body {
 
 .text-box {
     color: #fff;
-    padding: 110px;
+    padding-top: 80px;
+    padding-bottom: 80px;
     font-weight: bold;
 }
 
@@ -129,7 +475,7 @@ a{
     transform: translate(-50%, -50%);
 }
 
-.espacamento {
+.margin-top-100 {
     margin-top: 100px;
 }
 
@@ -159,11 +505,15 @@ a{
     padding: 10px;
 }
 
+.services-img {
+    width: 100%;
+    height: 230px;
+}
+
 .imagem {
     margin-top: 30px;
     width: 300px;
     height: 230px;
-    padding: 15px;
 }
 
 .image-description {
@@ -179,7 +529,7 @@ a{
     margin-top: 40%;
 }
 
-.espacamento-pequeno {
+.margin-top-30 {
     margin-top: 30px;
 }
 
@@ -201,15 +551,14 @@ a{
     opacity: 0.7;
 }
 
-.cor{background-color: #039BC0;}
+.moderate-blue{background-color: #039BC0;}
 
 .anuncio {
     font-size: 20px;
     font-family: Lato;
     color: #FFF;
     background-color: #039BC0;
-    height: 90px;
-    transform: translate(0%, 70%);
+    padding: 30px;
 }
 
 /*botão mobile subir*/
@@ -320,5 +669,599 @@ a{
 
     .second-banner {
         padding: 30px !important;
+    }
+}
+
+/*servicos*/
+.efeito {
+    padding: 30px;
+    font-weight: bold;
+    color: #FFF;
+    background-color: #006C99;
+}
+
+#texto-servicos {
+    font-size: 28px;
+    font-weight: bold;
+    color: #FFF;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.texto-sobre-manutencao{
+    text-align: justify;
+    font-size: 16px;
+    font-family: Lato;
+    color: #FFF;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+}
+
+.fonte-negrito {
+    font-size: 25px;
+    font-family: lato;
+}
+
+.fonte-medio {
+    font-size: 16px;
+    font-family: lato;
+}
+
+/*grid galeria de imagem*/
+.stretch {
+	align-items: stretch;
+}
+
+
+.grid {
+	max-width: 800px;
+	margin: 0 auto;
+	height: 500px;
+}
+
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 250px);
+}
+		
+
+.item {
+	margin: 0px;
+	cursor: pointer;
+}
+
+.item-long {
+    margin: 0px;
+    grid-row: span 2;
+	transform: scale(1);
+	cursor: pointer;
+}
+
+.hide-zoom {
+    overflow: hidden;
+}
+
+.img-item {
+    object-fit: cover;
+    height: 250px;
+    width: 270px;
+    transition: all 0.5s !important;
+}
+
+.img-long-item {
+	object-fit: cover;
+	height: 500px;
+	width: 270px;
+    transition: all 0.5s !important;
+}
+
+.img-item:hover {
+	transform: scale(1.1);
+}
+
+.img-long-item:hover {
+	transform: scale(1.1);
+}
+/*fim galeria de imagem*/
+
+/*galeria de imagem mobile e desktop*/
+.imagem-fundo-mobile {
+    display: none;
+}
+
+.imagem-fundo-desktop {
+    display: block;
+}
+
+hr {
+    /*border-top: 1px solid #006c99 !important;*/
+    border-top: 1px solid lightblue !important;
+}
+
+.link-contato {
+    text-decoration: none !important;
+    cursor: pointer;
+    color: #FFF;
+}
+
+.link-contato:hover {
+    color: #FFF;
+}
+
+.tamanho {
+    width: 31%;
+    margin-left: 35%;
+    font-size: 18px;
+    font-family: Lato;
+    font-weight: bold;
+}
+
+/*alinhamento*/
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+
+@media only screen and (max-width:1000px) {
+    
+    .container {
+        margin: 0 auto;
+        padding: 0 auto;
+        width: 100%;
+        height: auto;
+    }
+   
+    .imagem-fundo-desk {
+        display: none !important;
+    }
+      
+    .imagem-fundo-mobile {
+        display: block !important;
+    }
+    
+   /*Os items são as colunas onde as imagem ficam fixadas*/
+   .flex-item {
+        width: 30vw;
+        height: 30vw; 
+        margin: 0;
+        padding: 0;
+        transition: all .2s ease-out;
+    }
+
+    .img-item {
+        width: 30vw !important;
+        height: 30vw !important;
+    }
+
+    /*Os items são as colunas onde as imagem longas ficam fixadas*/
+    .flex-item-long {
+        width: 60vw;  /*ou 25% */
+        height: 60vw; /* ou calc(80vw / 4)*/ 
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: all .2s ease-out;
+    }
+
+    .img-long-item {
+        width: 60vw !important;
+        height: 60vw !important;
+    }
+
+    /*efeito zoom de imagem*/
+    .flex-item:hover {
+        transform: scale(1.06);
+    }
+
+    /*efeito zoom de imagem*/
+    .flex-item-long:hover {
+        transform: scale(1.04);
+    }
+
+    /*oculta as bordas quando dá um zoom*/
+    .hide-zoom-border {
+        overflow: hidden !important;
+    }
+
+}
+
+/*sobre*/
+.terceiro-banner-mobile {display: none;}
+
+.terceiro-banner {
+    /*opacity: 0.9;*/
+    height: 560px;
+    position: relative;
+    background-image: url("../img/portoes/portao-casa.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    /*box-shadow: inset 0 0 0 200px rgba(0,0,0,.1);*/
+}
+
+.efeito-mobile {display: none;}
+
+.efeito-esquerdo {
+    text-align: justify;
+    float: left;
+    color: #FFF;
+    background-color: #35AECC;
+    padding: 180px;
+    width: 800px;
+    position: absolute;
+    top: 200px;
+    transform: translate(0%, -36%);
+}
+
+.titulo-empresa {
+    text-align: justify;
+    font-family: Lato;
+    font-size: 30px;
+    font-weight: bold;
+    color: #FFF;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+}
+
+.texto-sobre{
+    text-align: justify;
+    font-size: 18px;
+    font-family: Lato;
+    color: #FFF;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+}
+
+.quarto-banner {
+    opacity: 0.8;
+    height: 560px;
+    position: relative;
+    background-image: url("../img/portoes/trabalhador.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.efeito-direito {
+    top: 200px;
+    text-align: justify;
+    float: right;
+    color: #FFF;
+    background-color: #006C99;
+    background-color: #039BC0;
+    padding: 180px;
+    width: 800px;
+    transform: translate(0, 20%);
+}
+
+.titulo-divulgacao {
+    text-align: justify;
+    font-family: Lato;
+    font-size: 30px;
+    font-weight: bold;
+    color: #FFF;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+}
+
+.divulgar {
+    font-family: Lato;
+    font-size: 18px;
+    color: #FFF;
+    text-align: justify;
+    position: absolute;
+    /*top: 54%;*/
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+}
+
+
+@media only screen and (max-width:900px) {   
+    
+    /*efeitos da coluna esquerda e direita*/
+    .efeito-esquerdo {display: none;}
+    .efeito-direito {display: none;}
+    
+    .efeito-mobile {display: block !important;}
+
+    .terceiro-banner {display:  none !important;}
+    
+    /*banner da primeiro coluna*/
+    .terceiro-banner-mobile {
+        height: auto;
+        position: relative;
+        background-image: url("../img/portoes/portao-casa.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+        padding: 100px;
+        /*box-shadow: inset 0 0 0 200px rgba(0,0,0,.1);*/
+        display: block;
+        opacity: 0.8;
+    }
+
+    .quarto-banner {display: none !important;}
+    
+    /*banner da segunda coluna*/
+    .quarto-banner-mobile {
+        height: auto;
+        position: relative;
+        background-image: url("../img/portoes/trabalhador.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+        padding: 100px;
+        /*box-shadow: inset 0 0 0 200px rgba(0,0,0,.1);*/
+        display: block !important;
+        opacity: 0.8;
+    }
+    
+    .titulo-mobile {
+        font-size: 25px;
+        text-align: center;
+    }
+    
+    .efeito-mobile {
+        text-align: justify;
+        color: #FFF;
+        background-color: #35AECC;
+        padding: 40px;
+        top: 20%;
+    }
+    
+    .titulo-empresa {
+        font-size: 25px !important;
+        width: 90vw !important;
+        top: 15% !important;
+        left: 50% !important;
+        
+    }
+    
+    .texto-sobre {
+        font-size: 15px !important;
+        top: 65% !important;
+        left: 35% !important;
+        width: 60% !important; 
+    }
+    
+    .terceiro-banner {
+        height: 550px !important;
+    }
+    
+    .quarto-banner {
+        height: 550px !important;
+        overflow: hidden !important;
+    }
+    
+    .titulo-divulgacao {
+        font-size: 25px !important;
+        width: 60% !important;
+        left: 60% !important;
+    }
+    
+    .divulgar {
+        font-size: 15px !important; 
+        top: 55% !important;
+        left: 60% !important;
+        width: 60% !important;
+    }
+    
+    .efeito-direito {
+        padding: 150px !important;
+        top: 50% !important;
+        transform: translate(0, 25%);
+    }
+    
+}
+
+
+@media only screen and (max-width:500px) {   
+    .terceiro-banner-mobile {
+        padding: 30px !important;
+    }
+
+    .efeito-mobile {
+        padding: 10px !important;
+    }
+
+    .quarto-banner-mobile {
+        padding: 30px !important;
+    }
+
+
+}
+
+
+/*contato*/
+.box {
+    width: 100%;
+    background: #fff;
+    padding: 30px 80px;
+    border: 1px solid rgba;
+    margin-top: 25px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.box textarea,
+.box input {
+    padding: 10px 0;
+    margin-bottom: 30px;
+    padding: 10px 0px;
+    margin-bottom: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #999;
+}
+
+.box form div
+{
+    position: relative;
+}
+
+.labels {
+    float:left;
+    color: #f7497d;
+}
+
+.box textarea:focus,
+.box input:focus,
+.box input:valid ~ .labelsl {
+    border-bottom: 1px solid #f7497d !important;
+}
+
+.inputText {
+    margin-top: 20px;
+}
+
+#txtMsg {
+    box-shadow: none !important;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 2px solid #999;
+    resize: none;
+
+}
+
+#menssagem {
+    border-bottom: 1px solid #f7497d !important;
+}
+
+.quinto-banner {
+    height: 450px;
+    position: relative;
+    /*background-image: url("../img/portao-garagem.jpg");*/
+    background-image: url("../img/portoes/portao-casa.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    box-shadow: inset 0 0 0 350px rgba(0,0,0,.1);
+    opacity: 0.9;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.2);
+}
+
+.texto-banner {
+    text-align: center;
+    font-family: Lato;
+    font-size: 36px;
+    font-weight: bold;
+    color: #FFF;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+}
+
+
+/*rodape*/
+.footer-mobile{display: none !important;}
+.footer-desktop{display: block !important;}
+
+.alinhamento-footer {
+    margin-top: 63px;
+}
+
+.footer-color {
+    background-color: #006C99;
+    color: #FFF;
+    position: absolute;
+    width: 100%;
+    padding: 25px;
+}
+
+.tamanho-fonte {
+    font-size: 20px;
+}
+
+.mini-container {
+    margin: 0 auto;
+    padding: 0 auto;
+    width: 300px;
+    height: auto;
+}
+
+.space-text {
+    margin-top: 15px;
+}
+
+.endereco {
+    color: #FFF;
+    text-decoration: none !important;
+}
+
+.endereco:hover {
+    color: #FFF;
+    cursor: pointer;
+}
+
+#tamanho {
+    margin-top: 5px;
+    width: 190px;
+    height: 29px;
+} 
+
+
+@media only screen and (max-width:1000px) {
+    .tamanho {
+        width: 100%;
+        margin-left: 0%;
+        font-size: 16px;
+        font-family: Lato;
+        font-weight: bold;
+    }
+    .anuncio {
+        font-size: 15px !important;
+    }
+    
+    .left-column {
+        min-width: 100% !important;
+    }
+    
+    .center-column {
+        min-width: 100% !important;
+    }
+    
+    .right-column {
+        min-width: 100% !important;        
+    }
+    
+    .footer-mobile{display: block !important;}
+    .footer-desktop{display: none !important;}
+    
+    .footer-color {
+        height: 420px !important;
     }
 }
